@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevStart - Learn</title>
+  <link rel="stylesheet" href="style/main.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #111;
+      color: white;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      padding: 20px;
+      background-color: #f4f4f4;
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 20px;
+      background-color: white;
+      color: black;
+      min-height: 100vh;
+    }
+
+    /* Toggle Theme Switch */
+    #themeToggleContainer {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "☀";
+      font-size: 16px;
+      left: 5px;
+      top: 3px;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      content: "🌙";
+      transform: translateX(24px);
+    }
+
+    /* Dark mode */
+    body.dark {
+      background-color: #111;
+      color: white;
+    }
+
+    body.dark .sidebar {
+      background-color: #1a1a1a;
+      color: white;
+    }
+
+    body.dark .content {
+      background-color: #111;
+      color: white;
+    }
+
+    body.dark .navbar a {
+      color: white;
+    }
+
+    body.dark .navbar {
+      background-color: #111;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">DevStart</div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="learn.html?lang=python">Python</a>
+      <a href="learn.html?lang=javascript">JavaScript</a>
+      <a href="learn.html?lang=java">Java</a>
+      <a href="learn.html?lang=html_css">HTML</a>
+      <a href="learn.html?lang=html_css">CSS</a>
+      <a href="learn.html?lang=c">C</a>
+      <a href="learn.html?lang=cpp">C++</a>
+      <a href="learn.html?lang=sql">SQL</a>
+      <a href="learn.html?lang=php">PHP</a>
+      <a href="learn.html?lang=typescript">TypeScript</a>
+      <a href="learn.html?lang=csharp">C#</a>
+      <a href="learn.html?lang=go">Go</a>
+      <a href="learn.html?lang=rust">Rust</a>
+      <a href="learn.html?lang=kotlin">Kotlin</a>
+      <a href="learn.html?lang=swift">Swift</a>
+      <a href="learn.html?lang=dart">Dart</a>
+      <a href="learn.html?lang=r">R</a>
+      <a href="learn.html?lang=shell">Shell</a>
+      <a href="learn.html?lang=matlab">MATLAB</a>
+      <a href="learn.html?lang=scala">Scala</a>
+      <a href="learn.html?lang=ruby">Ruby</a>
+      <a href="learn.html?lang=perl">Perl</a>
+    </nav>
+
+    <!-- 🌙 Theme Toggle -->
+    <div id="themeToggleContainer">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="content">
+      <div id="topicContent">
+        <h2>Select a topic</h2>
+        <p>Choose a topic from the sidebar to view content.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Toggle dark mode
+    document.getElementById("themeToggle").addEventListener("change", function () {
+      document.body.classList.toggle("dark", this.checked);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+/* Reset and Base Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Header Styles */
+header {
+  background-color: #111;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #333;
+}
+
+/* Container Layout */
+.container {
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+  transition: background-color 0.3s;
+}
+
+.dark .sidebar {
+  background-color: #1a1a1a;
+  color: white;
+  border-color: #333;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 10px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.dark .sidebar a {
+  color: #ddd;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar Search */
+.sidebar-search {
+  width: 100%;
+  padding: 6px 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.dark .sidebar-search {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+/* Content */
+.content {
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+
+.dark .content {
+  background-color: #111;
+}
+
+/* Topic Content */
+#topicContent h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+#topicContent h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+#topicContent pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.dark #topicContent pre {
+  background-color: #1e1e1e;
+}
+
+/* Copy Button */
+.copy-btn {
+  margin-top: 5px;
+  padding: 3px 8px;
+  font-size: 0.85rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+.copy-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Theme Toggle Switch */
+#themeToggleContainer {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "☀";
+  font-size: 14px;
+  left: 6px;
+  top: 4px;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  content: "🌙";
+  transform: translateX(18px);
+}
+
+/* Back to Top */
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#backToTop:hover {
+  background-color: #0056b3;
+}
+
+/* ✅ Home Page Specific Styling */
+body.home main.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+body.home main.container h1 {
+  font-size: 2.8rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+body.home main.container p {
+  font-size: 1.2rem;
+  color: #555;
+}
